@@ -36,8 +36,11 @@
         $invFinal = number_format($invFx);
         $rtnFinal = number_format($rtnFx);
         
+        // storing result in array
+        $final_result = array("Total value"=>$fvFinal, "Invested amount"=>$invFinal, "Est. returns"=>$rtnFinal);
         
-        echo $fvFinal .'<br>'. $invFinal .'<br>'. $rtnFinal;
+        // printing as JSON
+        echo json_encode($final_result);
         
     }
     else {
