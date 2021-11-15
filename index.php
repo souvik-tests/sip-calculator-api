@@ -1,5 +1,7 @@
 <?php
     error_reporting(0);
+    header("Access-Control-Allow-Origin: *");
+    header('Content-Type: application/json; charset=utf-8');
     if($_GET){
         $invest = $_GET['invest'];
         $return = $_GET['return'];
@@ -44,15 +46,15 @@
             $rtnFx = round($rtn);
 
             // number format
-            $fvFinal = number_format($fvFx);
-            $invFinal = number_format($invFx);
-            $rtnFinal = number_format($rtnFx);
+            $fvFinal = (int)$fvFx;
+            $invFinal = (int)$invFx;
+            $rtnFinal = (int)$rtnFx;
 
             // storing result in array
             $final_result = array("status"=>"success", "Total value"=>$fvFinal, "Invested amount"=>$invFinal, "Est. returns"=>$rtnFinal, "message"=>"value calculated sucessfully");
 
             // printing as JSON
-            echo json_encode($final_result);
+            echo json_encode($final_result, JSON_PRETTY_PRINT);
         }
         
         
