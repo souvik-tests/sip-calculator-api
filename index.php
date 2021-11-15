@@ -9,15 +9,15 @@
         
         if($invest == ""){
             $msg = array("status"=>"failed", "message"=>"no 'invest' value found");
-            echo json_encode($msg);
+            echo json_encode($msg, JSON_PRETTY_PRINT);
         }
         elseif($return == "") {
             $msg = array("status"=>"failed", "message"=>"no 'return' value found");
-            echo json_encode($msg);
+            echo json_encode($msg, JSON_PRETTY_PRINT);
         }
         elseif($year == "") {
             $msg = array("status"=>"failed", "message"=>"no 'year' value found");
-            echo json_encode($msg);
+            echo json_encode($msg, JSON_PRETTY_PRINT);
         }
         else {
             // calculations starts - SIP
@@ -61,6 +61,6 @@
     }
     else {
         $msg = array("status"=>"failed", "message"=>"no inputs found");
-        echo json_encode($msg);
+        echo json_encode($msg, JSON_PRETTY_PRINT);
     }
 ?>
