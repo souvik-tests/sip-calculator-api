@@ -45,7 +45,7 @@
             $invFx = round($inv);
             $rtnFx = round($rtn);
 
-            // number format
+            // int format
             $fvFinal = (int)$fvFx;
             $invFinal = (int)$invFx;
             $rtnFinal = (int)$rtnFx;
